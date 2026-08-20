@@ -26,7 +26,7 @@ export default class HydraCanvas extends Component {
     let precisionValue = isIOS ? 'highp' : 'mediump'
 
 
-    const hydraOptions = { detectAudio: true, canvas: element.querySelector("canvas"), precision: precisionValue }
+    const hydraOptions = { detectAudio: true, canvas: element.querySelector("canvas"), precision: precisionValue, numOutputs: 8, numSources: 8 }
     
     if (this.state.serverURL === null) {
       console.log('LOCAL ONLY, WILL NOT INIT webRTC and gallery')
