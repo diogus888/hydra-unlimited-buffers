@@ -60,6 +60,11 @@ a:hover {
   background-color: transparent;
 }
 
+@font-face {
+  font-family: 'Paradigm Semi Mono Beta';
+  src: url('../fonts/ParadigmSemiMonoBeta-Regular.otf') format('opentype');
+}
+
 .CodeMirror {
   position: absolute;
   /* top: 20px;
@@ -70,6 +75,27 @@ a:hover {
   background: transparent;
   width: calc(100% - 60px);
   height: calc(100% - 60px);
+  font-family: 'Paradigm Semi Mono Beta', monospace;
+}
+
+/* the line boxes live here: white fills blended with the visuals below,
+   a black 50% dim layer above them, and the plain white editor text on
+   top of both (see src/lib/diffboxes.js) */
+#diff-boxes,
+#dim-boxes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+#diff-boxes {
+  z-index: 3;
+  mix-blend-mode: difference;
+}
+#dim-boxes {
+  z-index: 4;
 }
 
 .console {

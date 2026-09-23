@@ -45,14 +45,16 @@
   color: #515151;
 }
 .cm-s-tomorrow-night-eighties .CodeMirror-cursor {
-  border-left: 3px solid #999;
+  border-left: 3px solid #fff;
 }
 
 /* OJ*/
+/* boxes are drawn by the #diff-boxes canvas (white fill, difference blend);
+   the DOM only carries the plain white text */
 .cm-s-tomorrow-night-eighties .CodeMirror-line span {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: transparent;
   transition: background-color 0.3s ease;
-  color: #cccccc;
+  color: #ffffff;
 }
 /* fix weird alternating background colors */
 .cm-s-tomorrow-night-eighties .CodeMirror-line span span {
@@ -111,4 +113,14 @@
 .cm-s-tomorrow-night-eighties .CodeMirror-matchingbracket {
   text-decoration: underline;
   color: white !important;
+}
+
+/* all text plain white — syntax colors disabled */
+.cm-s-tomorrow-night-eighties.CodeMirror,
+.cm-s-tomorrow-night-eighties .CodeMirror-line span,
+.cm-s-tomorrow-night-eighties span[class*='cm-'] {
+  color: #ffffff !important;
+}
+.cm-s-tomorrow-night-eighties span.cm-error {
+  background: transparent;
 }

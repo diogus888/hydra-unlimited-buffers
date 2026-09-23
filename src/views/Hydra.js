@@ -60,7 +60,17 @@ export default class HydraCanvas extends Component {
 
   createElement({ width = window.innerWidth, height = window.innerHeight } = {}) {
 
+    // ?res=1920x1080 renders the buffers at a fixed resolution; the canvas
+    // is then scaled to fill the window (object-fit: cover), cropping the
+    // overflow — so a landscape render fits a portrait window
+    const res = new URLSearchParams(window.location.search).get('res')
+    if (res && /^\d+x\d+$/.test(res)) {
+      const parts = res.split('x')
+      width = parseInt(parts[0], 10)
+      height = parseInt(parts[1], 10)
+    }
+
     return html`<div style="width:100%;height:100%;">
-        <canvas id="hydra-canvas" class="bg-black" style="image-rendering:pixelated; width:100%;height:100%" width="${width}" height="${height}"></canvas></div>`
+        <canvas id="hydra-canvas" class="bg-black" style="image-rendering:pixelated; width:100%;height:100%;object-fit:cover" width="${width}" height="${height}"></canvas></div>`
   }
 }

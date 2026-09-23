@@ -6,11 +6,7 @@ export default function galleryStore(state, emitter) {
    
         sketches = new Gallery((code, sketchFromURL) => {
           emitter.emit('load and eval code', code, false)
-          if(sketchFromURL) {
-            emitter.emit('ui: hide info')
-          } else {
-            emitter.emit('ui: show info')
-          }
+          emitter.emit('ui: hide info')
           emitter.emit('render')
           // @todo create gallery store
         //  console.warn('gallery callback not let implemented')

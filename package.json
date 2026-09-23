@@ -38,6 +38,7 @@
     "envify": "^4.1.0",
     "esmify": "^2.1.1",
     "http-server": "^14.1.1",
+    "puppeteer-core": "^25.9.0",
     "source-map-explorer": "^2.5.2",
     "terser": "^5.14.2",
     "vite": "^4.4.4",

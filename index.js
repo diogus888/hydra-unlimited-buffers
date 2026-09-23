@@ -7,6 +7,8 @@ import editorStore from './src/stores/editor-store.js'
 import galleryStore from './src/stores/gallery-store.js'
 
 import mainView from './src/views/main.js'
+import './src/lib/typewriter.js'
+import './src/lib/diffboxes.js'
 
 const app = choo()
 // app.use(devtools())
